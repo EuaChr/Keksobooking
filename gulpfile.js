@@ -98,17 +98,7 @@ gulp.task("html:build", async function () {
 
 gulp.task("image:build", async function () {
   gulp.src(path.src.img)
-      .pipe(imagemin([
-        imagemin.jpegtran({progressive: true}),
-        imagemin.optipng({optimizationLevel: 3}),
-        imagemin.svgo({
-          plugins: [
-            {removeViewBox: true},
-            {cleanupIDs: false}
-          ]
-        })
-      ]))
-      .pipe(gulp.dest(path.build.img));
+   .pipe(gulp.dest(path.build.img));
 });
 
 
